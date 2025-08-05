@@ -11,7 +11,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     final double statusBarHeight = MediaQuery.of(context).padding.top;
 
     return Container(
-      height: 100.h + statusBarHeight,
+      height: 90.h + statusBarHeight,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [AppColors.redVariant1, AppColors.redVariant2],
@@ -23,17 +23,18 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       padding: EdgeInsets.only(
         top: statusBarHeight + 10.h,
         left: 10.w,
-        right: 10.w,
+        right: 15.w,
         bottom: 20.h,
       ),
       child: Row(
         children: [
-          IconButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {},
-            icon: Icon(Icons.notifications, size: 24.sp),
-            color: AppColors.white,
+          Image.asset(
+            'assets/images/app_logo.png',
+            width: 40.w,
+            height: 60.h,
+            fit: BoxFit.contain,
           ),
+          SizedBox(width: 10.w),
           Expanded(
             child: Container(
               height: 50.h,
@@ -43,12 +44,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
               ),
               child: Row(
                 children: [
-                  SizedBox(width: 10.w),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.qr_code, size: 28.sp),
-                    color: Colors.black,
-                  ),
+                  SizedBox(width: 20.w),
+                  Icon(Icons.search, color: Colors.black, size: 25.sp),
+                  SizedBox(width: 15.w),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
@@ -62,26 +60,28 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                       textAlign: TextAlign.right,
                     ),
                   ),
-                  SizedBox(width: 15.w),
-                  Icon(Icons.search, color: Colors.black, size: 25.sp),
-                  SizedBox(width: 20.w),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.qr_code, size: 28.sp),
+                    color: Colors.black,
+                  ),
+
+                  SizedBox(width: 10.w),
                 ],
               ),
             ),
           ),
-          SizedBox(width: 10.w),
-          Image.asset(
-            'assets/images/app_logo.png',
-            width: 40.w,
-            height: 60.h,
-            fit: BoxFit.contain,
+          IconButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {},
+            icon: Icon(Icons.notifications, size: 24.sp),
+            color: AppColors.white,
           ),
-          SizedBox(width: 10.w),
         ],
       ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(90);
 }

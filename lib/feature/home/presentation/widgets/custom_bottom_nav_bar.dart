@@ -34,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
               SizedBox(width: 40.w),
               const NavBarItem(icon: Icons.notifications),
               const NavBarItem(icon: Icons.more_horiz),
-            ].reversed.toList(),
+            ].toList(),
           ),
         ),
         Positioned(
