@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/core/resources/colors/colors.dart';
 
 class LocationSelector extends StatefulWidget {
@@ -22,13 +23,17 @@ class _LocationSelectorState extends State<LocationSelector> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(Icons.local_shipping, color: AppColors.brightYellow),
-        const SizedBox(width: 8),
-        const Text(
-          "التوصيل من:",
-          style: TextStyle(fontWeight: FontWeight.bold),
+        Icon(
+          Icons.local_shipping,
+          color: AppColors.secondaryGreen,
+          size: 30.sp,
         ),
-        const SizedBox(width: 8),
+        SizedBox(width: 10.w),
+        Text(
+          "التوصيل من :",
+          style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16.sp),
+        ),
+        SizedBox(width: 20.w),
         DropdownButton<String>(
           value: selectedCityRoute,
           icon: const Icon(Icons.keyboard_arrow_down),
@@ -41,7 +46,13 @@ class _LocationSelectorState extends State<LocationSelector> {
             }
           },
           items: cityRoutes.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(value: value, child: Text(value));
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(
+                value,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
+              ),
+            );
           }).toList(),
         ),
       ],

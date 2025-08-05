@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/location_selector.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -6,6 +7,12 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: [LocationSelector()]);
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.all(12.w),
+        child: const Column(children: [LocationSelector()]),
+      ),
+    );
   }
 }
