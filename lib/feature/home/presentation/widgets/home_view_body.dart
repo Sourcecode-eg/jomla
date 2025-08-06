@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/core/resources/images/images.dart';
+import 'package:jomla_market/core/widgets/main_banner.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/category_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/category_title.dart';
@@ -30,6 +31,8 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           children: [
             const LocationSelector(),
+            SizedBox(height: 15.h),
+            const MainBanner(),
             const CategoryTitle(title: 'الأقسام'),
             FeaturedCategoryCard(
               onTap: () {},
@@ -39,7 +42,7 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 22.h),
+              padding: EdgeInsets.only(top: 25.h),
               child: GridView.builder(
                 itemCount: 9,
                 shrinkWrap: true,
