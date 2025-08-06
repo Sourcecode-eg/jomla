@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../colors/colors.dart';
 
@@ -10,14 +11,14 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-// default
+  // default
   static const TextStyle textStylDefault = TextStyle(
     color: AppColors.defaultColor,
     fontSize: 22,
     fontWeight: FontWeight.bold,
   );
 
-   ///gold
+  ///gold
   static const TextStyle textStyleRegularGold = TextStyle(
     color: AppColors.textAppGold,
     fontSize: 14,
@@ -253,6 +254,16 @@ class AppTextStyle {
     color: AppColors.textAppWhiteDark,
     fontSize: 14,
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle bodyText16 = TextStyle(
+    color: AppColors.black,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle bodyText20 = TextStyle(
+    color: AppColors.black,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
   );
   AppTextStyle._();
 }
