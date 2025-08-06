@@ -17,7 +17,11 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(20.r),
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20.r),
+        bottomLeft: Radius.circular(20.r),
+        bottomRight: Radius.circular(20.r),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
