@@ -9,6 +9,7 @@ import 'package:jomla_market/feature/home/presentation/widgets/category_title.da
 import 'package:jomla_market/feature/home/presentation/widgets/company_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/featured_category_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/location_selector.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/offers_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -54,28 +55,24 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 25.h),
-              child: GridView.builder(
-                itemCount: 9,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 20.h,
-                  crossAxisSpacing: 20.w,
-                  childAspectRatio: 0.8.w,
-                ),
-                itemBuilder: (context, index) => CategoryCard(
-                  onTap: () {},
-                  categoryModel: categories[index],
-                ),
+              padding: EdgeInsets.only(top: 30.h),
+              child: CustomGridView(
+                items: categories,
+                itemBuilder: (category) =>
+                    CategoryCard(onTap: () {}, categoryModel: category),
               ),
             ),
             const CategoryTitle(title: 'الشركات'),
-            CustomGridView(
-              items: companies,
-              itemBuilder: (company) => CompanyCard(onTap: () {}, img: company),
+            Padding(
+              padding: EdgeInsets.only(top: 10.h),
+              child: CustomGridView(
+                items: companies,
+                itemBuilder: (company) =>
+                    CompanyCard(onTap: () {}, img: company),
+              ),
             ),
+            const CategoryTitle(title: 'العروض'),
+            const OffersListView(),
           ],
         ),
       ),

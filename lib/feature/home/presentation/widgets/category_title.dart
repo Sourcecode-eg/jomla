@@ -9,7 +9,7 @@ class CategoryTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 20.h, bottom: 15.w, right: 5.w),
+      padding: EdgeInsets.only(top: 20.h, bottom: 10.w, right: 5.w),
       child: Row(
         children: [
           Expanded(child: Text(title, style: AppTextStyle.bodyText20)),

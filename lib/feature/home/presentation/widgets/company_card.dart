@@ -22,14 +22,7 @@ class CompanyCard extends StatelessWidget {
             bottomLeft: Radius.circular(20.r),
             bottomRight: Radius.circular(20.r),
           ),
-          border: Border.all(color: Colors.grey.shade400, width: 1.w),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade300,
-              blurRadius: 6.r,
-              offset: Offset(1.w, 6.h),
-            ),
-          ],
+          border: Border.all(color: Colors.grey.shade300, width: 1.w),
         ),
         child: Center(
           child: Image.asset(
