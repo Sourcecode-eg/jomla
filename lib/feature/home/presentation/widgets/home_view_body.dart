@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/resources/colors/colors.dart';
 import 'package:jomla_market/core/resources/images/images.dart';
 import 'package:jomla_market/core/widgets/custom_grid_view.dart';
 import 'package:jomla_market/core/widgets/main_banner.dart';
@@ -45,7 +46,7 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           children: [
             const LocationSelector(),
-            const MainBanner(),
+            MainBanner(item: Image.asset(AppImages.banner, fit: BoxFit.fill)),
             const CategoryTitle(title: 'الأقسام'),
             FeaturedCategoryCard(
               onTap: () {},
@@ -73,6 +74,21 @@ class HomeViewBody extends StatelessWidget {
             ),
             const CategoryTitle(title: 'العروض'),
             const OffersListView(),
+            Padding(
+              padding: EdgeInsets.only(bottom: 40.h),
+              child: MainBanner(
+                item: Center(
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.play_arrow,
+                      size: 80.sp,
+                      color: AppColors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

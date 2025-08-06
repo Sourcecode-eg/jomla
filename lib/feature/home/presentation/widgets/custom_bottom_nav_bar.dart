@@ -40,29 +40,6 @@ class CustomBottomNavBar extends StatelessWidget {
             ].toList(),
           ),
         ),
-        Positioned(
-          right: 15.w,
-          top: -65.h,
-          child: InkWell(
-            onTap: () {},
-            child: Container(
-              width: 60.w,
-              height: 60.h,
-              decoration: const BoxDecoration(
-                color: AppColors.secondaryGreen,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.grey,
-                    blurRadius: 4,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-              child: Icon(Icons.headset_mic, color: Colors.white, size: 40.sp),
-            ),
-          ),
-        ),
       ],
     );
   }

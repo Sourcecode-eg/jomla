@@ -134,7 +134,7 @@ class AppColors {
   static const Color vividRed = Color(
     0xFFF80022,
   ); // Strong alert or removal CTA
-  static const Color offWhite = Color(
+  static const Color scaffoldColor = Color(
     0xFFF5F6F8,
   ); // Page background or container backgrounds
   static const Color softRed = Color(

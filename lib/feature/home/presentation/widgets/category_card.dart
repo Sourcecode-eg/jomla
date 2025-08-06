@@ -42,7 +42,7 @@ class CategoryCard extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.shade300,
-                      blurRadius: 6.r,
+                      blurRadius: 8.r,
                       spreadRadius: 0,
                       offset: Offset(1.w, 6.h),
                     ),
@@ -55,8 +55,8 @@ class CategoryCard extends StatelessWidget {
                 right: 0,
                 child: Image.asset(
                   categoryModel.image,
-                  width: 80.w,
-                  height: 80.w,
+                  width: 70.w,
+                  height: 70.w,
                   fit: BoxFit.contain,
                 ),
               ),
