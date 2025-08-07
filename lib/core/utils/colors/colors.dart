@@ -8,6 +8,7 @@ class AppColors {
   static const Color primaryGreen = Color(
     0xFF2AD253,
   ); // Used in main CTA and highlights
+
   static const Color darkGreen = Color(
     0xFF0C541E,
   ); // Darker tone for shadows or depth in green elements

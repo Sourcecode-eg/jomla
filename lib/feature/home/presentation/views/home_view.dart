@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: AppColors.scaffoldColor,
-      appBar: CustomAppbar(),
+      appBar: CustomHomeAppbar(),
       bottomNavigationBar: CustomBottomNavBar(),
       floatingActionButton: CustomFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

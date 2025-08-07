@@ -28,12 +28,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  another_flushbar: ^1.12.30
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_lints: ^5.0.0
