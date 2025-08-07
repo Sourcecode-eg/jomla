@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -15,11 +15,11 @@ class CustomFloatingActionButton extends StatelessWidget {
         elevation: 0,
         backgroundColor: AppColors.secondaryGreen,
         shape: CircleBorder(
-          side: BorderSide(color: AppColors.white, width: 10.w),
+          side: BorderSide(color: AppColors.pureWhite, width: 10.w),
         ),
         child: const Icon(
           Icons.shopping_cart,
-          color: AppColors.white,
+          color: AppColors.pureWhite,
           size: 36,
         ),
       ),

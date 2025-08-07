@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
 
 class CompanyCard extends StatelessWidget {
   const CompanyCard({super.key, required this.onTap, required this.img});
@@ -16,7 +16,7 @@ class CompanyCard extends StatelessWidget {
         width: 100.w,
         height: 90.h,
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: AppColors.pureWhite,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.r),
             bottomLeft: Radius.circular(20.r),

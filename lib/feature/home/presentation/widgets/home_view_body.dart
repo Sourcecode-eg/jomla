@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
-import 'package:jomla_market/core/resources/images/images.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
+import 'package:jomla_market/core/utils/images/images.dart';
 import 'package:jomla_market/core/widgets/custom_grid_view.dart';
 import 'package:jomla_market/core/widgets/main_banner.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
@@ -82,7 +82,7 @@ class HomeViewBody extends StatelessWidget {
                     icon: Icon(
                       Icons.play_arrow,
                       size: 80.sp,
-                      color: AppColors.white,
+                      color: AppColors.pureWhite,
                     ),
                     onPressed: () {},
                   ),

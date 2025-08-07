@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/images/images.dart';
+import 'package:jomla_market/core/utils/images/images.dart';
 import 'package:jomla_market/feature/home/data/models/offer_model.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/offer_card.dart';
 

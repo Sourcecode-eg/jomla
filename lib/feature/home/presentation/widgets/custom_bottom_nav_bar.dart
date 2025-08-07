@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/nav_bar_item.dart';
 
 class CustomBottomNavBar extends StatelessWidget {

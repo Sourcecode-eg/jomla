@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
-import 'package:jomla_market/core/resources/images/images.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
+import 'package:jomla_market/core/utils/images/images.dart';
 import 'package:jomla_market/feature/home/data/models/offer_model.dart';
 
 class OfferCard extends StatelessWidget {
@@ -19,7 +19,7 @@ class OfferCard extends StatelessWidget {
         width: 145.w,
         height: 200.h,
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: AppColors.pureWhite,
           borderRadius: BorderRadius.circular(20.r),
           boxShadow: [
             BoxShadow(
@@ -77,7 +77,7 @@ class OfferCard extends StatelessWidget {
                 ),
                 child: Text(
                   "إضافة للسلة",
-                  style: TextStyle(fontSize: 10.sp, color: AppColors.white),
+                  style: TextStyle(fontSize: 10.sp, color: AppColors.pureWhite),
                 ),
               ),
             ),

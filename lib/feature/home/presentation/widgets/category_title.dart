@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/styles/app_text_style.dart';
+import 'package:jomla_market/core/utils/styles/app_text_style.dart';
 
 class CategoryTitle extends StatelessWidget {
   const CategoryTitle({super.key, required this.title});

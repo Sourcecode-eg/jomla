@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
-import 'package:jomla_market/core/resources/styles/app_text_style.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
+import 'package:jomla_market/core/utils/styles/app_text_style.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar({super.key});
@@ -39,7 +39,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
             child: Container(
               height: 50.h,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.pureWhite,
                 borderRadius: BorderRadius.circular(25.r),
               ),
               child: Row(
@@ -49,6 +49,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                   SizedBox(width: 15.w),
                   Expanded(
                     child: TextField(
+                      readOnly: true,
                       decoration: InputDecoration(
                         hintText: "ابحث",
                         hintStyle: AppTextStyle.textStyleAppBar.copyWith(
@@ -75,7 +76,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
             padding: EdgeInsets.zero,
             onPressed: () {},
             icon: Icon(Icons.notifications, size: 24.sp),
-            color: AppColors.white,
+            color: AppColors.pureWhite,
           ),
         ],
       ),

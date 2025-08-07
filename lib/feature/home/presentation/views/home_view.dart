@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jomla_market/core/resources/colors/colors.dart';
+import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_fab.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_home_appbar.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_bottom_nav_bar.dart';
