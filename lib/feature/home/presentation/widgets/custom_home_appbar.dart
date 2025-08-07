@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/navigation_helper.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/core/utils/styles/app_text_style.dart';
+import 'package:jomla_market/feature/search/presentation/views/search_view.dart';
 
 class CustomHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomHomeAppbar({super.key});
@@ -49,6 +51,9 @@ class CustomHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                   SizedBox(width: 15.w),
                   Expanded(
                     child: TextField(
+                      onTap: () {
+                        navigateTo(context, const SearchView());
+                      },
                       readOnly: true,
                       decoration: InputDecoration(
                         hintText: "ابحث",

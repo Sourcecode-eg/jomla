@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
 
@@ -53,10 +54,10 @@ class CategoryCard extends StatelessWidget {
                 top: -15.h,
                 left: 0,
                 right: 0,
-                child: Image.asset(
-                  categoryModel.image,
-                  width: 70.w,
-                  height: 70.w,
+                child: Image.network(
+                  "${ApiConstants.networkImgUrl}${categoryModel.iconPath}",
+                  width: 90.w,
+                  height: 90.w,
                   fit: BoxFit.contain,
                 ),
               ),
@@ -66,7 +67,7 @@ class CategoryCard extends StatelessWidget {
           Text(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            categoryModel.title,
+            categoryModel.nameAr,
             style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
           ),
         ],

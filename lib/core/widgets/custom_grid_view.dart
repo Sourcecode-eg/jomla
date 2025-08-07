@@ -4,17 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomGridView<T> extends StatelessWidget {
   final List<T> items;
   final Widget Function(T item) itemBuilder;
+  final int itemCount;
 
   const CustomGridView({
     super.key,
     required this.items,
     required this.itemBuilder,
+    required this.itemCount,
   });
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: items.length,
+      itemCount: itemCount,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

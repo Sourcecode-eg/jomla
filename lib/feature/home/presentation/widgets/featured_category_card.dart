@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
 
@@ -53,7 +54,7 @@ class FeaturedCategoryCard extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    categoryModel.title,
+                    categoryModel.nameAr,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -65,8 +66,8 @@ class FeaturedCategoryCard extends StatelessWidget {
             Positioned(
               top: -20.h,
               left: 45.w,
-              child: Image.asset(
-                categoryModel.image,
+              child: Image.network(
+                "${ApiConstants.networkImgUrl}${categoryModel.iconPath}",
                 width: 70.w,
                 height: 70.w,
                 fit: BoxFit.contain,
