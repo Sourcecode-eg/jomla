@@ -1,9 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/assets_helper.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
 
-class CompanyCard extends StatelessWidget {
-  const CompanyCard({super.key, required this.onTap, required this.img});
+class BrandCard extends StatelessWidget {
+  const BrandCard({super.key, required this.onTap, required this.img});
   final void Function() onTap;
   final String img;
 
@@ -25,11 +27,16 @@ class CompanyCard extends StatelessWidget {
           border: Border.all(color: Colors.grey.shade300, width: 1.w),
         ),
         child: Center(
-          child: Image.asset(
-            img,
+          child: CachedNetworkImage(
+            imageUrl: img,
             width: 70.w,
             height: 70.w,
             fit: BoxFit.contain,
+            placeholder: (context, url) => const Center(
+              child: CircularProgressIndicator(color: AppColors.redVariant1),
+            ),
+            errorWidget: (context, url, error) =>
+                Image.asset(AppImages.fallbackImg, fit: BoxFit.cover),
           ),
         ),
       ),

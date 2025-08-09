@@ -6,6 +6,8 @@ class ApiConstants {
   static const String sendOtp = "$baseUrl/Account/send-otp";
   static const String allBusinessTypes = "$baseUrl/BusinessTypes/all";
   static const String getAllCategories = "$baseUrl/Category/GetAllCategories";
+  static const String getAllBrands = "$baseUrl/Brands/GetAllBrands";
+  static const String getAllOffers = "$baseUrl/Offer/GetAllOffers";
 
   // Api key google map
   static const String kGoogleApiKey = 'AIzaSyCULgpAHLJ4mlKCU-FLS2SffXRMDH2JNGg';

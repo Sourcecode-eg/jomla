@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/assets_helper.dart';
+import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
-import 'package:jomla_market/core/utils/images/images.dart';
 import 'package:jomla_market/feature/home/data/models/offer_model.dart';
 
 class OfferCard extends StatelessWidget {
@@ -40,22 +42,27 @@ class OfferCard extends StatelessWidget {
                 height: 22.w,
               ),
             ),
-            Image.asset(
-              offer.image,
+            CachedNetworkImage(
+              imageUrl: "${ApiConstants.networkImgUrl}${offer.imagePath}",
               width: 90.w,
               height: 90.h,
               fit: BoxFit.contain,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(color: AppColors.redVariant1),
+              ),
+              errorWidget: (context, url, error) =>
+                  Image.asset(AppImages.fallbackImg, fit: BoxFit.cover),
             ),
             SizedBox(height: 5.h),
             Text(
-              offer.title,
+              offer.productNameAr,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.sp),
             ),
             SizedBox(height: 5.h),
             Text(
-              offer.price,
+              offer.offerValue,
               style: TextStyle(
                 color: AppColors.redVariant2,
                 fontSize: 12.sp,

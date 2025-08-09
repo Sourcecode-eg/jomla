@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/assets_helper.dart';
+import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
-import 'package:jomla_market/core/utils/images/images.dart';
 import 'package:jomla_market/core/widgets/custom_grid_view.dart';
 import 'package:jomla_market/core/widgets/main_banner.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
@@ -26,22 +27,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
     super.initState();
-    context.read<HomeCubit>().getAllCategories();
+    context.read<HomeCubit>().getHomeData();
   }
 
   @override
   Widget build(BuildContext context) {
-    final List<String> companies = [
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-      AppImages.company,
-    ];
     return BlocBuilder<HomeCubit, HomeCubitState>(
       builder: (context, state) {
         if (state is HomeLoading) {
@@ -50,7 +40,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           );
         } else if (state is HomeLoadedSuccess) {
           final categories = state.categories;
+          final brands = state.brands;
           final featuredCategory = state.categories[9];
+          final offers = state.offers;
           return SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Padding(
@@ -75,7 +67,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   Padding(
                     padding: EdgeInsets.only(top: 30.h),
                     child: CustomGridView(
-                      itemCount: categories.length - 1,
+                      itemCount: 9,
                       items: categories,
                       itemBuilder: (category) =>
                           CategoryCard(onTap: () {}, categoryModel: category),
@@ -85,14 +77,16 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   Padding(
                     padding: EdgeInsets.only(top: 10.h),
                     child: CustomGridView(
-                      itemCount: companies.length,
-                      items: companies,
-                      itemBuilder: (company) =>
-                          CompanyCard(onTap: () {}, img: company),
+                      itemCount: 9,
+                      items: brands,
+                      itemBuilder: (brand) => BrandCard(
+                        onTap: () {},
+                        img: "${ApiConstants.networkImgUrl}${brand.iconPath}",
+                      ),
                     ),
                   ),
                   const CategoryTitle(title: 'العروض'),
-                  const OffersListView(),
+                  OffersListView(offers: offers),
                   Padding(
                     padding: EdgeInsets.only(bottom: 40.h),
                     child: MainBanner(

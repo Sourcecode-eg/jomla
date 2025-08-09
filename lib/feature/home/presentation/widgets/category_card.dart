@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jomla_market/core/helper/assets_helper.dart';
 import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
@@ -54,11 +56,19 @@ class CategoryCard extends StatelessWidget {
                 top: -15.h,
                 left: 0,
                 right: 0,
-                child: Image.network(
-                  "${ApiConstants.networkImgUrl}${categoryModel.iconPath}",
+                child: CachedNetworkImage(
+                  imageUrl:
+                      "${ApiConstants.networkImgUrl}${categoryModel.iconPath}",
                   width: 90.w,
                   height: 90.w,
                   fit: BoxFit.contain,
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(
+                      color: AppColors.redVariant1,
+                    ),
+                  ),
+                  errorWidget: (context, url, error) =>
+                      Image.asset(AppImages.fallbackImg, fit: BoxFit.cover),
                 ),
               ),
             ],
