@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/support_bottom_sheet.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/support_bottom_sheet.dart';
 
 class SupportButton extends StatelessWidget {
   const SupportButton({super.key});

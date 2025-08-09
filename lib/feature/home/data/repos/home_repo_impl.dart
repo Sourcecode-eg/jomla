@@ -10,9 +10,15 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.homeService});
 
   @override
-  Future<List<CategoryModel>> getAllCategories() async {
+  Future<List<CategoryModel>> getAllCategories({
+    int page = 1,
+    int pageSize = 10,
+  }) async {
     try {
-      final response = await homeService.getAllCategories();
+      final response = await homeService.getAllCategories(
+        page: page,
+        pageSize: pageSize,
+      );
       final List data = response['data'];
 
       return data.map((category) => CategoryModel.fromJson(category)).toList();
@@ -22,9 +28,15 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<List<BrandModel>> getAllBrands() async {
+  Future<List<BrandModel>> getAllBrands({
+    int page = 1,
+    int pageSize = 10,
+  }) async {
     try {
-      final response = await homeService.getAllBrands();
+      final response = await homeService.getAllBrands(
+        page: page,
+        pageSize: pageSize,
+      );
       final List data = response['data'];
       return data.map((brand) => BrandModel.fromJson(brand)).toList();
     } catch (e) {
@@ -33,9 +45,15 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<List<OfferModel>> getAllOffers() async {
+  Future<List<OfferModel>> getAllOffers({
+    int page = 1,
+    int pageSize = 8,
+  }) async {
     try {
-      final response = await homeService.getAllOffers();
+      final response = await homeService.getAllOffers(
+        page: page,
+        pageSize: pageSize,
+      );
       final List data = response['data'];
       return data.map((offer) => OfferModel.fromJson(offer)).toList();
     } catch (e) {

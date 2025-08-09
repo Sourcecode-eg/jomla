@@ -3,8 +3,8 @@ import 'package:jomla_market/core/utils/colors/colors.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_fab.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_home_appbar.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/custom_bottom_nav_bar.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/home_view_body.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/support_button.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/home_view_body.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/support_button.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

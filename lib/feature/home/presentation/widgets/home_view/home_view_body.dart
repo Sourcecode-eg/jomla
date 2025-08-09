@@ -9,12 +9,12 @@ import 'package:jomla_market/core/widgets/main_banner.dart';
 import 'package:jomla_market/feature/home/data/models/category_model.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_cubit.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_state.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/category_card.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/category_title.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/company_card.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/featured_category_card.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/location_selector.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/offers_list_view.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/category_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/category_title.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/company_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/featured_category_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/location_selector.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/offers_list_view.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -32,21 +32,21 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeCubitState>(
-      builder: (context, state) {
-        if (state is HomeLoading) {
-          return const Center(
-            child: CircularProgressIndicator(color: AppColors.redVariant1),
-          );
-        } else if (state is HomeLoadedSuccess) {
-          final categories = state.categories;
-          final brands = state.brands;
-          final featuredCategory = state.categories[9];
-          final offers = state.offers;
-          return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.all(12.w),
+    return Padding(
+      padding: EdgeInsets.all(12.w),
+      child: BlocBuilder<HomeCubit, HomeCubitState>(
+        builder: (context, state) {
+          if (state is HomeLoading) {
+            return const Center(
+              child: CircularProgressIndicator(color: AppColors.redVariant1),
+            );
+          } else if (state is HomeLoadedSuccess) {
+            final categories = state.categories;
+            final brands = state.brands;
+            final featuredCategory = state.categories[9];
+            final offers = state.offers;
+            return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   const LocationSelector(),
@@ -104,14 +104,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   ),
                 ],
               ),
-            ),
-          );
-        } else if (state is HomeFailure) {
-          return Center(child: Text('There was an error: ${state.errMsg}'));
-        } else {
-          return const SizedBox();
-        }
-      },
+            );
+          } else if (state is HomeFailure) {
+            return Center(child: Text('There was an error: ${state.errMsg}'));
+          } else {
+            return const SizedBox();
+          }
+        },
+      ),
     );
   }
 }

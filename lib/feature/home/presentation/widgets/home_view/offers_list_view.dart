@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/feature/home/data/models/offer_model.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/offer_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/offer_card.dart';
 
 class OffersListView extends StatelessWidget {
   const OffersListView({super.key, required this.offers});

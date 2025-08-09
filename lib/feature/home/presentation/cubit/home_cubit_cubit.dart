@@ -9,6 +9,12 @@ import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_state.da
 class HomeCubit extends Cubit<HomeCubitState> {
   HomeCubit(this._homeRepo) : super(HomeCubitInitial());
   final HomeRepo _homeRepo;
+  int _page = 1;
+  final int _pageSize = 10;
+  bool _isLoading = false;
+  bool hasMore = true;
+
+  List<BrandModel> brands = [];
   Future<void> getHomeData() async {
     emit(HomeLoading());
     try {
@@ -29,6 +35,34 @@ class HomeCubit extends Cubit<HomeCubitState> {
       );
     } catch (e) {
       emit(HomeFailure(errMsg: e.toString()));
+    }
+  }
+
+  Future<void> getAllBrands() async {
+    if (_isLoading || !hasMore) return;
+    _isLoading = true;
+
+    if (_page == 1) {
+      emit(HomeLoading());
+    }
+
+    try {
+      final newBrands = await _homeRepo.getAllBrands(
+        page: _page,
+        pageSize: _pageSize,
+      );
+
+      if (newBrands.isEmpty) {
+        hasMore = false;
+      } else {
+        brands.addAll(newBrands);
+        _page++;
+        emit(BrandsLoadedSuccess(brands: List.from(brands)));
+      }
+    } catch (e) {
+      emit(HomeFailure(errMsg: e.toString()));
+    } finally {
+      _isLoading = false;
     }
   }
 }

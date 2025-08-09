@@ -20,6 +20,12 @@ final class HomeLoadedSuccess extends HomeCubitState {
   });
 }
 
+final class BrandsLoadedSuccess extends HomeCubitState {
+  final List<BrandModel> brands;
+
+  BrandsLoadedSuccess({required this.brands});
+}
+
 final class HomeFailure extends HomeCubitState {
   final String errMsg;
 
