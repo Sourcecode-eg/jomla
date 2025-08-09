@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jomla_market/core/helper/network/api_constants.dart';
 import 'package:jomla_market/core/utils/colors/colors.dart';
+import 'package:jomla_market/core/utils/styles/app_text_style.dart';
 import 'package:jomla_market/core/widgets/custom_grid_view.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_cubit.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_state.dart';
@@ -51,7 +52,9 @@ class _BrandsViewBodyState extends State<BrandsViewBody> {
               controller: _scrollController,
               physics: const BouncingScrollPhysics(),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text('جميع الشركات', style: AppTextStyle.bodyText20),
                   CustomGridView(
                     itemCount: brands.length + 1,
                     items: brands,

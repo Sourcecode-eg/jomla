@@ -23,7 +23,7 @@ class HomeRepoImpl implements HomeRepo {
 
       return data.map((category) => CategoryModel.fromJson(category)).toList();
     } catch (e) {
-      throw Exception('Failed to load data: $e');
+      throw ('Failed to load data: $e');
     }
   }
 
@@ -40,7 +40,7 @@ class HomeRepoImpl implements HomeRepo {
       final List data = response['data'];
       return data.map((brand) => BrandModel.fromJson(brand)).toList();
     } catch (e) {
-      throw Exception('Failed to load data: $e');
+      throw ('Failed to load data: $e');
     }
   }
 
@@ -57,7 +57,7 @@ class HomeRepoImpl implements HomeRepo {
       final List data = response['data'];
       return data.map((offer) => OfferModel.fromJson(offer)).toList();
     } catch (e) {
-      throw Exception('Failed to load data: $e');
+      throw ('Failed to load data: $e');
     }
   }
 }
