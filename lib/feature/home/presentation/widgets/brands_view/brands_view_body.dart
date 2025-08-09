@@ -7,7 +7,7 @@ import 'package:jomla_market/core/utils/styles/app_text_style.dart';
 import 'package:jomla_market/core/widgets/custom_grid_view.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_cubit.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_state.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/home_view/company_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/brand_card.dart';
 
 class BrandsViewBody extends StatefulWidget {
   const BrandsViewBody({super.key});

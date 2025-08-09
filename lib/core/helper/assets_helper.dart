@@ -4,4 +4,5 @@ class AppImages {
   static const String banner = "$assetImages/main_banner.png";
   static const String offerBadge = "$assetImages/offer_badge.png";
   static const String fallbackImg = "$assetImages/fallback_img.png";
+  static const String outOfStockImg = "$assetImages/outofstock.png";
 }

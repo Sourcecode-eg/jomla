@@ -11,7 +11,7 @@ import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_cubit.da
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_state.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/home_view/category_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/home_view/category_title.dart';
-import 'package:jomla_market/feature/home/presentation/widgets/home_view/company_card.dart';
+import 'package:jomla_market/feature/home/presentation/widgets/home_view/brand_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/home_view/featured_category_card.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/home_view/location_selector.dart';
 import 'package:jomla_market/feature/home/presentation/widgets/home_view/offers_list_view.dart';

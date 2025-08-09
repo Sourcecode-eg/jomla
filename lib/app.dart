@@ -6,8 +6,7 @@ import 'package:jomla_market/core/helper/app_responsive.dart';
 import 'package:jomla_market/feature/home/data/repos/home_repo_impl.dart';
 import 'package:jomla_market/feature/home/data/service/home_service.dart';
 import 'package:jomla_market/feature/home/presentation/cubit/home_cubit_cubit.dart';
-import 'package:jomla_market/feature/home/presentation/views/brands_view.dart';
-import 'package:jomla_market/feature/home/presentation/views/home_view.dart';
+import 'package:jomla_market/feature/home/presentation/views/category_view.dart';
 
 class JomlaApp extends StatelessWidget {
   const JomlaApp({super.key});
@@ -24,7 +23,7 @@ class JomlaApp extends StatelessWidget {
         home: BlocProvider(
           create: (context) =>
               HomeCubit(HomeRepoImpl(homeService: HomeService(dio: Dio()))),
-          child: const BrandsView(),
+          child: const CategoryView(),
         ),
       ),
     );
